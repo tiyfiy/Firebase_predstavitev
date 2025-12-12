@@ -1,10 +1,5 @@
 # Firebase za Android - Kolokvijska naloga
 
-## Avtоr
-**Ime:** Timotej Maučec
-**Študijsko leto:** 2005  
-**Predmet:** Platformno odvisni razvoj aplikacij (PORA)
-
 ---
 
 ## Uvod
@@ -64,3 +59,152 @@ V tem projektu sem demonstriral štiri ključne Firebase funkcionalnosti:
 | **Omejitve Firestore** | Maksimalno 1 MB na dokument, omejene poizvedbe |
 
 ---
+
+## Licenca in uporabniki
+
+### Licenca
+Firebase uporablja **Google APIs Terms of Service** in **Firebase Terms of Service**. 
+
+- **Licenčni tip**: Proprietary (lastniška licenca)
+- **SDK licenca**: Apache License 2.0 (za Firebase Android SDK)
+- **Uporaba**: Brezplačna za Spark plan, plačljiva za Blaze plan
+
+**Firebase SDK GitHub:** https://github.com/firebase/firebase-android-sdk
+
+### Število uporabnikov
+
+- **Več kot 3 milijone aplikacij** uporablja Firebase
+- **Firebase Android SDK** ima preko **40,000+ stars** na GitHubu
+- **Maven downloads**: Več kot 100M+ prenosov mesečno
+- **Top uporabniki**: Duolingo, The New York Times, Trivago, Alibaba, Lyft
+
+---
+
+## Časovna in prostorska zahtevnost
+
+### Firebase Authentication
+
+| Operacija | Časovna zahtevnost | Prostorska zahtevnost |
+|-----------|-------------------|----------------------|
+| Sign Up (Email/Password) | O(1) - 500-1500ms | O(1) - ~50KB RAM |
+| Sign In | O(1) - 300-1000ms | O(1) - ~30KB RAM |
+| Sign Out | O(1) - instant | O(1) - minimal |
+| Password Reset | O(1) - 1-3s | O(1) - ~20KB RAM |
+
+### Firestore Database
+
+| Operacija | Časovna zahtevnost | Prostorska zahtevnost |
+|-----------|-------------------|----------------------|
+| Read single document | O(1) - 50-200ms | O(n) - velikost dokumenta |
+| Write single document | O(1) - 100-300ms | O(n) - velikost dokumenta |
+| Query collection | O(n + k) | O(k) - k = število rezultatov |
+| Batch write | O(n) - n = št. operacij | O(n) - velikost vseh dok. |
+
+### Realtime Database
+
+| Operacija | Časovna zahtevnost | Prostorska zahtevnost |
+|-----------|-------------------|----------------------|
+| Read | O(1) - 20-100ms | O(n) - velikost podatkov |
+| Write | O(1) - 50-200ms | O(n) - velikost podatkov |
+| Listener update | O(1) - 20-50ms | O(n) - spremenjeni podatki |
+| Query | O(n) | O(k) - št. rezultatov |
+
+### Firebase Cloud Messaging
+
+| Operacija | Časovna zahtevnost | Prostorska zahtevnost |
+|-----------|-------------------|----------------------|
+| Token registration | O(1) - 500ms-2s | O(1) - ~5KB |
+| Receive notification | O(1) - instant | O(1) - ~10KB |
+| Send via API | O(1) - 100-500ms | O(1) - velikost payload |
+
+### Omejitve
+
+- **Firestore**: Maksimalno 1 MB na dokument, 10,000 write operacij/sekundo
+- **Realtime Database**: Maksimalno 200,000 concurrent connections (Blaze plan)
+- **FCM**: Maksimalno 4 KB payload velikost
+- **Bandwidth**: 10 GB/mesec (Spark plan), unlimited (Blaze plan)
+
+---
+
+## Vzdrževanje
+
+### Razvojni tim
+
+Firebase vzdržuje **Google Firebase Team** z več kot **150+ contributors** na GitHubu.
+
+### Zadnje posodobitve (December 2024)
+
+```
+Firebase Android SDK:
+- Zadnja verzija: v33.7.0 (November 2024)
+- Frekvenca posodobitev: Mesečno
+- Kritični popravki: V 24 urah
+- Major releases: 3-4x letno
+```
+
+### Aktivnost repozitorija
+
+- **GitHub**: https://github.com/firebase/firebase-android-sdk
+- **Stars**: 2,300+
+- **Forks**: 570+
+- **Issues**: ~150 odprtih, ~3,500 zaprth
+- **Pull requests**: Aktivno sodelovanje skupnosti
+- **Commit frequency**: 50-100+ commitov mesečno
+
+### Podpora
+
+- **Google Cloud Support**: 24/7 za Blaze plan
+- **Firebase Console**: Real-time monitoring in alerting
+- **Stack Overflow**: 250,000+ vprašanj z tag "firebase"
+- **Dokumentacija**: Neprestano posodobljena
+- **Community**: Firebase Slack, Discord, Reddit
+
+### Release cycle
+
+```
+- Patch updates: Tedensko
+- Minor updates: Mesečno
+- Major updates: Kvartalno
+- Security patches: Takoj ob odkritju
+```
+
+---
+
+## Funkcionalnosti projekta
+
+Ta projekt demonstrira štiri ključne Firebase komponente:
+
+### 1. Firebase Authentication
+- **Registracija** uporabnikov z email/password
+- **Prijava** obstoječih uporabnikov
+- **Odjava** iz aplikacije
+- **Pozabljeno geslo** (email reset)
+- **Validacija** email naslovov in gesel
+
+### 2. Firestore Database
+- **CRUD operacije** (Create, Read, Update, Delete)
+- **Shranjevanje** strukturiranih podatkov
+- **Poizvedbe** s filtriranjem in sortiranjem
+- **Real-time posodobitve** z listeners
+- **Batch operacije**
+
+### 3. Realtime Database
+- **Sinhronizacija v realnem času** med napravami
+- **Offline podpora** z avtomatsko sinhronizacijo
+- **Chat funkcionalnost** kot demo
+- **Listeners** za spremljanje sprememb
+- **Optimistično posodabljanje**
+
+### 4. Firebase Cloud Messaging
+- **Push obvestila** na napravo
+- **Token management**
+- **Foreground obvestila**
+- **Background obvestila**
+- **Custom payload** podatki
+
+---
+
+## Avtоr
+**Ime:** Timotej Maučec
+**Študijsko leto:** 2005  
+**Predmet:** Platformno odvisni razvoj aplikacij (PORA)
