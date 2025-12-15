@@ -84,40 +84,25 @@ Firebase uporablja **Google APIs Terms of Service** in **Firebase Terms of Servi
 
 ## Časovna in prostorska zahtevnost
 
-### Firebase Authentication
+**Firebase Authentication**
+- Časovna: O(1) - konstantna (~1 sekunda za sign in/up)
+- Prostorska: O(1) - konstantna (~30-50KB RAM)
+- Operacije (sign in, sign up, reset) so neodvisne od števila uporabnikov
 
-| Operacija | Časovna zahtevnost | Prostorska zahtevnost |
-|-----------|-------------------|----------------------|
-| Sign Up (Email/Password) | O(1) - 500-1500ms | O(1) - ~50KB RAM |
-| Sign In | O(1) - 300-1000ms | O(1) - ~30KB RAM |
-| Sign Out | O(1) - instant | O(1) - minimal |
-| Password Reset | O(1) - 1-3s | O(1) - ~20KB RAM |
+**Firestore Database**
+- Časovna: O(1) za enojne operacije (~100-200ms), O(n) za queries
+- Prostorska: O(n) - odvisno od velikosti dokumentov
+- Indexi omogočajo hitre poizvedbe
 
-### Firestore Database
+**Realtime Database**
+- Časovna: O(1) za read/write (~50-100ms), O(n) za queries
+- Prostorska: O(n) - odvisno od velikosti podatkov
+- Najhitrejša za real-time operacije (20-50ms latency)
 
-| Operacija | Časovna zahtevnost | Prostorska zahtevnost |
-|-----------|-------------------|----------------------|
-| Read single document | O(1) - 50-200ms | O(n) - velikost dokumenta |
-| Write single document | O(1) - 100-300ms | O(n) - velikost dokumenta |
-| Query collection | O(n + k) | O(k) - k = število rezultatov |
-| Batch write | O(n) - n = št. operacij | O(n) - velikost vseh dok. |
-
-### Realtime Database
-
-| Operacija | Časovna zahtevnost | Prostorska zahtevnost |
-|-----------|-------------------|----------------------|
-| Read | O(1) - 20-100ms | O(n) - velikost podatkov |
-| Write | O(1) - 50-200ms | O(n) - velikost podatkov |
-| Listener update | O(1) - 20-50ms | O(n) - spremenjeni podatki |
-| Query | O(n) | O(k) - št. rezultatov |
-
-### Firebase Cloud Messaging
-
-| Operacija | Časovna zahtevnost | Prostorska zahtevnost |
-|-----------|-------------------|----------------------|
-| Token registration | O(1) - 500ms-2s | O(1) - ~5KB |
-| Receive notification | O(1) - instant | O(1) - ~10KB |
-| Send via API | O(1) - 100-500ms | O(1) - velikost payload |
+**Firebase Cloud Messaging**
+- Časovna: O(1) - konstantna (~instant delivery)
+- Prostorska: O(1) - konstantna (~5-10KB per notification)
+- Delivery ni garantiran (best-effort)
 
 ### Omejitve
 
