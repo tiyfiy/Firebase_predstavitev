@@ -157,37 +157,55 @@ Firebase Android SDK:
 
 ---
 
-## Funkcionalnosti projekta
+## Koda
 
-Ta projekt demonstrira štiri ključne Firebase komponente:
+```
+//firestore authentication
+override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    binding = ActivityAuthBinding.inflate(layoutInflater)
+    setContentView(binding.root)
 
-### 1. Firebase Authentication
-- **Registracija** uporabnikov z email/password
-- **Prijava** obstoječih uporabnikov
-- **Odjava** iz aplikacije
-- **Pozabljeno geslo** (email reset)
-- **Validacija** email naslovov in gesel
+    // Initialize Firebase Auth
+    auth = Firebase.auth
 
-### 2. Firestore Database
-- **CRUD operacije** (Create, Read, Update, Delete)
-- **Shranjevanje** strukturiranih podatkov
-- **Poizvedbe** s filtriranjem in sortiranjem
-- **Real-time posodobitve** z listeners
-- **Batch operacije**
+    setupClickListeners()
+    updateUI()
+}
 
-### 3. Realtime Database
-- **Sinhronizacija v realnem času** med napravami
-- **Offline podpora** z avtomatsko sinhronizacijo
-- **Chat funkcionalnost** kot demo
-- **Listeners** za spremljanje sprememb
-- **Optimistično posodabljanje**
+private fun createAccount(email: String, password: String) {
+        auth.createUserWithEmailAndPassword(email, password)
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    Toast.makeText(this, "Registracija uspešna!", Toast.LENGTH_SHORT).show()
+                    updateUI()
+                } else {
+                    Toast.makeText(
+                        this,
+                        "Registracija neuspešna: ${task.exception?.message}",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+            }
+    }
 
-### 4. Firebase Cloud Messaging
-- **Push obvestila** na napravo
-- **Token management**
-- **Foreground obvestila**
-- **Background obvestila**
-- **Custom payload** podatki
+
+//firestore database
+db.collection("items")
+            .add(item)
+
+
+//firestore realtime database
+//posiljanje
+database.child("messages").push().setValue(message)
+//sprejemanje
+database.child("messages").addChildEventListener(object : ChildEventListener { ... }
+
+
+//firestore push notifications
+
+
+```
 
 ---
 
