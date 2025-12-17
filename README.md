@@ -52,7 +52,7 @@ V tem projektu sem demonstriral štiri ključne Firebase funkcionalnosti:
 | Slabost | Opis |
 |---------|------|
 | **Stroški** | Pri večjih aplikacijah lahko stroški hitro narastejo |
-| **Vendor lock-in** | Težka migracija na drugo platformo zaradi specifične arhitekture |
+| **Težka migracija** | Težka migracija na drugo platformo zaradi specifične arhitekture |
 | **Omejena fleksibilnost** | Omejitve pri kompleksnih poizvedbah in relacijskih podatkih |
 | **Odvisnost od interneta** | Brez povezave aplikacija deluje omejeno (kljub offline podpori) |
 | **Debugging** | Težje razhroščevanje v primerjavi z lastnim backendom |
