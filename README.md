@@ -1,6 +1,4 @@
-# Firebase za Android ![Firebase](https://img.shields.io/badge/Firebase-FFCA28?logo=firebase&logoColor=white) ![Firebase Hosting](https://img.shields.io/badge/Hosting-Firebase-FFCA28?logo=firebase&logoColor=white) ![Firestore](https://img.shields.io/badge/Firestore-Firebase-FFCA28?logo=firebase&logoColor=white) ![Firebase Auth](https://img.shields.io/badge/Auth-Firebase-FFCA28?logo=firebase&logoColor=white)
-
-
+x# Firebase za Android ![Firebase](https://img.shields.io/badge/Firebase-FFCA28?logo=firebase&logoColor=white) ![Firebase Hosting](https://img.shields.io/badge/Hosting-Firebase-FFCA28?logo=firebase&logoColor=white) ![Firestore](https://img.shields.io/badge/Firestore-Firebase-FFCA28?logo=firebase&logoColor=white) ![Firebase Auth](https://img.shields.io/badge/Auth-Firebase-FFCA28?logo=firebase&logoColor=white)
 
 ---
 
@@ -9,6 +7,7 @@
 Firebase je platforma Backend-as-a-Service (BaaS), ki jo je razvil Google in omogoča razvijalcem hitro razvijanje mobilnih in spletnih aplikacij brez potrebe po vzdrževanju lastne backendne infrastrukture. Firebase ponuja celoten ekosistem storitev, ki pokrivajo avtentikacijo, shranjevanje podatkov, gostovanje, analitiko, push obvestila in še več.
 
 V tem projektu sem demonstriral štiri ključne Firebase funkcionalnosti:
+
 - **Firebase Authentication** - sistem za prijavo in registracijo uporabnikov
 - **Firestore Database** - NoSQL podatkovna baza v oblaku
 - **Realtime Database** - podatkovna baza s sinhronizacijo v realnem času
@@ -36,34 +35,35 @@ V tem projektu sem demonstriral štiri ključne Firebase funkcionalnosti:
 
 ### Prednosti
 
-| Prednost | Opis |
-|----------|------|
-| **Hiter razvoj** | Zmanjšanje časa razvoja za do 30-40% zaradi že pripravljene backendne infrastrukture |
-| **Varnost** | Vgrajeni varnostni mehanizmi in pravila za dostop do podatkov |
-| **Analitika** | Brezplačna in natančna analitika uporabnikov |
-| **Multi-platforma** | Podpora za Android, iOS, Web, Flutter |
-| **Realni čas** | Sinhronizacija podatkov v realnem času brez dodatne konfiguracije |
-| **Brezplačen tier** | Spark plan omogoča brezplačno uporabo za manjše projekte |
-| **Enostavna integracija** | Plugin za Android Studio, dependency management |
-| **Push obvestila** | FCM omogoča zanesljiva push obvestila |
+| Prednost                  | Opis                                                                                 |
+| ------------------------- | ------------------------------------------------------------------------------------ |
+| **Hiter razvoj**          | Zmanjšanje časa razvoja za do 30-40% zaradi že pripravljene backendne infrastrukture |
+| **Varnost**               | Vgrajeni varnostni mehanizmi in pravila za dostop do podatkov                        |
+| **Analitika**             | Brezplačna in natančna analitika uporabnikov                                         |
+| **Multi-platforma**       | Podpora za Android, iOS, Web, Flutter                                                |
+| **Realni čas**            | Sinhronizacija podatkov v realnem času brez dodatne konfiguracije                    |
+| **Brezplačen tier**       | Spark plan omogoča brezplačno uporabo za manjše projekte                             |
+| **Enostavna integracija** | Plugin za Android Studio, dependency management                                      |
+| **Push obvestila**        | FCM omogoča zanesljiva push obvestila                                                |
 
 ### Slabosti
 
-| Slabost | Opis |
-|---------|------|
-| **Stroški** | Pri večjih aplikacijah lahko stroški hitro narastejo |
-| **Težka migracija** | Težka migracija na drugo platformo zaradi specifične arhitekture |
-| **Omejena fleksibilnost** | Omejitve pri kompleksnih poizvedbah in relacijskih podatkih |
-| **Odvisnost od interneta** | Brez povezave aplikacija deluje omejeno (kljub offline podpori) |
-| **Debugging** | Težje razhroščevanje v primerjavi z lastnim backendom |
-| **Omejitve Firestore** | Maksimalno 1 MB na dokument, omejene poizvedbe |
+| Slabost                    | Opis                                                             |
+| -------------------------- | ---------------------------------------------------------------- |
+| **Stroški**                | Pri večjih aplikacijah lahko stroški hitro narastejo             |
+| **Težka migracija**        | Težka migracija na drugo platformo zaradi specifične arhitekture |
+| **Omejena fleksibilnost**  | Omejitve pri kompleksnih poizvedbah in relacijskih podatkih      |
+| **Odvisnost od interneta** | Brez povezave aplikacija deluje omejeno (kljub offline podpori)  |
+| **Debugging**              | Težje razhroščevanje v primerjavi z lastnim backendom            |
+| **Omejitve Firestore**     | Maksimalno 1 MB na dokument, omejene poizvedbe                   |
 
 ---
 
 ## Licenca in uporabniki
 
 ### Licenca
-Firebase uporablja **Google APIs Terms of Service** in **Firebase Terms of Service**. 
+
+Firebase uporablja **Google APIs Terms of Service** in **Firebase Terms of Service**.
 
 - **Licenčni tip**: Proprietary (lastniška licenca)
 - **SDK licenca**: Apache License 2.0 (za Firebase Android SDK)
@@ -83,21 +83,25 @@ Firebase uporablja **Google APIs Terms of Service** in **Firebase Terms of Servi
 ## Časovna in prostorska zahtevnost
 
 **Firebase Authentication**
+
 - Časovna: O(1) - konstantna (~1 sekunda za sign in/up)
 - Prostorska: O(1) - konstantna (~30-50KB RAM)
 - Operacije (sign in, sign up, reset) so neodvisne od števila uporabnikov
 
 **Firestore Database**
+
 - Časovna: O(1) za enojne operacije (~100-200ms), O(n) za queries
 - Prostorska: O(n) - odvisno od velikosti dokumentov
 - Indexi omogočajo hitre poizvedbe
 
 **Realtime Database**
+
 - Časovna: O(1) za read/write (~50-100ms), O(n) za queries
 - Prostorska: O(n) - odvisno od velikosti podatkov
 - Najhitrejša za real-time operacije (20-50ms latency)
 
 **Firebase Cloud Messaging**
+
 - Časovna: O(1) - konstantna (~instant delivery)
 - Prostorska: O(1) - konstantna (~5-10KB per notification)
 - Delivery ni garantiran (best-effort)
@@ -202,13 +206,13 @@ database.child("messages").addChildEventListener(object : ChildEventListener { .
 
 //firestore push notifications
 class MyFirebaseMessagingService : FirebaseMessagingService() {
-    
+
     override fun onMessageReceived(remoteMessage: RemoteMessage) {
         remoteMessage.notification?.let {
             sendNotification(it.title, it.body)
         }
     }
-    
+
     override fun onNewToken(token: String) {
         Log.d(TAG, "FCM Token: $token")
         // Pošlji token na strežnik
@@ -219,7 +223,36 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
 
 ---
 
+## Screenshots Aplikacije
+
+### Mobilna Aplikacija
+
+<div align="center">
+
+| Main Menu                                                             | Authentication                                                             | Firestore Database                                                    |
+| --------------------------------------------------------------------- | -------------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| ![Main Menu](screenshots/Screenshot%202025-12-17%20at%2012.41.16.png) | ![Authentication](screenshots/Screenshot%202025-12-17%20at%2012.41.25.png) | ![Firestore](screenshots/Screenshot%202025-12-17%20at%2012.41.35.png) |
+
+| Realtime Database Chat                                           | Cloud Messaging                                                 | Push Notification                                                        |
+| ---------------------------------------------------------------- | --------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| ![Chat](screenshots/Screenshot%202025-12-17%20at%2012.43.53.png) | ![FCM](screenshots/Screenshot%202025-12-17%20at%2012.44.23.png) | ![Notification](screenshots/Screenshot%202025-12-17%20at%2012.44.35.png) |
+
+</div>
+
+### Firebase Console
+
+<div align="center">
+
+| Firestore Console                                                             | Authentication Console                                                   | Realtime Database Console                                                |
+| ----------------------------------------------------------------------------- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| ![Firestore Console](screenshots/Screenshot%202025-12-17%20at%2012.42.58.png) | ![Auth Console](screenshots/Screenshot%202025-12-17%20at%2012.43.05.png) | ![RTDB Console](screenshots/Screenshot%202025-12-17%20at%2012.43.19.png) |
+
+</div>
+
+---
+
 ## Avtоr
+
 **Ime:** Timotej Maučec
 **Študijsko leto:** 2005  
 **Predmet:** Platformno odvisni razvoj aplikacij (PORA)
