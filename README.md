@@ -74,7 +74,7 @@ Firebase uporablja **Google APIs Terms of Service** in **Firebase Terms of Servi
 ### Število uporabnikov
 
 - **Več kot 3 milijone aplikacij** uporablja Firebase
-- **Firebase Android SDK** ima preko **40,000+ stars** na GitHubu
+- **Firebase Android SDK** ima preko **2,500+ stars** na GitHubu
 - **Maven downloads**: Več kot 100M+ prenosov mesečno
 - **Top uporabniki**: Duolingo, The New York Times, Trivago, Alibaba, Lyft
 
