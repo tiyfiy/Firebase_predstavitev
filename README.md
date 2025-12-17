@@ -26,11 +26,9 @@ V tem projektu sem demonstriral štiri ključne Firebase funkcionalnosti:
 
 3. **Skalabilnost**: Aplikacije lahko začnejo majhne in rastejo brez skrbi za infrastrukturo.
 
-4. **Realni čas**: Realtime Database omogoča sinhronizacijo podatkov v realnem času med vsemi povezanimi odjemalci.
+4. **Brezplačen začetek**: Firebase ponuja velikodušen brezplačen paket (Spark plan), ki je primeren za manjše projekte in učenje.
 
-5. **Brezplačen začetek**: Firebase ponuja velikodušen brezplačen paket (Spark plan), ki je primeren za manjše projekte in učenje.
-
-6. **Enostavna implementacija**: Z dobro dokumentacijo in SDK-ji za različne platforme je implementacija hitra.
+5. **Enostavna implementacija**: Z dobro dokumentacijo in SDK-ji za različne platforme je implementacija hitra.
 
 ---
 
