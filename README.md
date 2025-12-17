@@ -159,7 +159,7 @@ Firebase Android SDK:
 
 ## Koda
 
-```
+```kotlin
 //firestore authentication
 override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -203,7 +203,19 @@ database.child("messages").addChildEventListener(object : ChildEventListener { .
 
 
 //firestore push notifications
-
+class MyFirebaseMessagingService : FirebaseMessagingService() {
+    
+    override fun onMessageReceived(remoteMessage: RemoteMessage) {
+        remoteMessage.notification?.let {
+            sendNotification(it.title, it.body)
+        }
+    }
+    
+    override fun onNewToken(token: String) {
+        Log.d(TAG, "FCM Token: $token")
+        // Pošlji token na strežnik
+    }
+}
 
 ```
 
